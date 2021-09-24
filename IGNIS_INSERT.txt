@@ -1,0 +1,86 @@
+/************************************** SETOR ************************************/
+INSERT INTO Setor(Nome) 
+	VALUES ('Setor 1');
+INSERT INTO Setor(Nome) 
+	VALUES ('Setor 2');
+INSERT INTO Setor(Nome) 
+	VALUES ('Setor 3');
+
+/************************************** PID ************************************/
+INSERT INTO PID(Nome,Kp,Ki,Kd) 
+	VALUES ('CAD1',0.5,0.001,0.75);
+INSERT INTO PID(Nome,Kp,Ki,Kd) 
+	VALUES ('COL1',0.01,0.0001,0.95);
+INSERT INTO PID(Nome,Kp,Ki,Kd) 
+	VALUES ('CAD2',0.45,0.002,0.76);
+INSERT INTO PID(Nome,Kp,Ki,Kd) 
+	VALUES ('COL2',0.03,0.0001,1.02);
+INSERT INTO PID(Nome,Kp,Ki,Kd) 
+	VALUES ('CAD3',0.55,0.012,0.86);
+INSERT INTO PID(Nome,Kp,Ki,Kd) 
+	VALUES ('COL3',0.032,0.0005,1.05);
+
+/************************************** CALDEIRA ************************************************/
+INSERT INTO Caldeira(Nome,Setor_ID,Status,Setpoint,Data, Horario, PID_ID) 
+		VALUES ('CALD1',1,1, 1300, 22092021 , 192511, 1);	
+INSERT INTO Caldeira(Nome,Setor_ID,Status,Setpoint,Data, Horario, PID_ID) 
+		VALUES ('CALD2',2,1, 1300, 20092021 , 182252, 3);	
+INSERT INTO Caldeira(Nome,Setor_ID,Status,Setpoint,Data, Horario, PID_ID) 
+	VALUES ('CALD3',3,0, 1300, 21092021 , 151022, 5);	
+
+/************************************** COLUNA DE DESTILAÇÃO ************************************/
+INSERT INTO Coluna_destilacao(Nome,Setor_ID,Status,Setpoint,Data, Horario, PID_ID) 
+		VALUES ('COL1',1,1, 5, 22092021 , 193007, 2);	
+INSERT INTO Coluna_destilacao(Nome,Setor_ID,Status,Setpoint,Data, Horario, PID_ID) 
+		VALUES ('COL2',2,1, 5, 20092021 , 202351, 4);	
+INSERT INTO Coluna_destilacao(Nome,Setor_ID,Status,Setpoint,Data, Horario, PID_ID) 
+	VALUES ('COL3',3,0, 5, 21092021 , 161156, 6);	
+
+/************************************** EMPREGADO ************************************/
+INSERT INTO Empregado(Nome,CPF,Sexo,'Data de Nascimento',Telefone, Celular, Cargo, Email, Senha, Rua, Número, Bairro, Cidade, Estado, Pais, Complemento, CEP, Setor_ID, Supervisor_ID) 
+	VALUES ('Victor Freire', 02020202020, 'M', 10031998, 88888888,999999999,'Engenheiro', 'victor.freire@ignis.br', 'senha123','R. Lenise', 43, 'Catole', 'Campina Grande', 'PB', 'Brasil', 'nada' , 5555555,1,NULL);
+INSERT INTO Empregado(Nome,CPF,Sexo,'Data de Nascimento',Telefone, Celular, Cargo, Email, Senha, Rua, Número, Bairro, Cidade, Estado, Pais, Complemento, CEP, Setor_ID, Supervisor_ID) 
+	VALUES ('Vinicius Batista', 010110110, 'M', 27071997, 88888889,999999998,'Engenheiro', 'vinicius.formiga@ee.ufcg.edu.br', 'senha456','R. Denise',53, 'Catole', 'Campina Grande', 'PB', 'Brasil', 'nada' , 5555554,2,NULL);	
+INSERT INTO Empregado(Nome,CPF,Sexo,'Data de Nascimento',Telefone, Celular, Cargo, Email, Senha, Rua, Número, Bairro, Cidade, Estado, Pais, Complemento, CEP, Setor_ID, Supervisor_ID) 
+	VALUES ('Xuxa Meneghel', 010110130, 'F', 31081994, 88888889,999999998,'Tecnico', 'xuxa.meneghel@ignis.br', 'senha789','R. Genise',63, 'Alto Branco', 'Campina Grande', 'PB', 'Brasil', 'nada' , 5555556,1,2);	
+INSERT INTO Empregado(Nome,CPF,Sexo,'Data de Nascimento',Telefone, Celular, Cargo, Email, Senha, Rua, Número, Bairro, Cidade, Estado, Pais, Complemento, CEP, Setor_ID, Supervisor_ID) 
+ 	VALUES ('Meu Loro', 010130150, 'M', 02051996, 77777777, 999999997,'Tecnico', 'meu.loro@ignis.br', 'senha101','R. Zenise',83, 'Prata', 'Campina Grande', 'PB', 'Brasil', 'nada' , 5555557,2,1);	
+
+/************************************** HISTORICO ************************************/
+INSERT INTO Historico(Temperatura,Pressao,Data,Horario, Setor_ID) 
+	VALUES (1299.10,4.8,22092021,200115,1);
+INSERT INTO Historico(Temperatura,Pressao,Data,Horario, Setor_ID) 
+	VALUES (1296.10,4.4,22092021,200115,2);
+INSERT INTO Historico(Temperatura,Pressao,Data,Horario, Setor_ID) 
+	VALUES (0,0,22092021,200115,3);
+INSERT INTO Historico(Temperatura,Pressao,Data,Horario, Setor_ID) 
+	VALUES (1298.12,4.8,22092021,200215,1);
+INSERT INTO Historico(Temperatura,Pressao,Data,Horario, Setor_ID) 
+	VALUES (1295.10,4.5,22092021,200215,2);
+INSERT INTO Historico(Temperatura,Pressao,Data,Horario, Setor_ID) 
+	VALUES (0,0,22092021,200215,3);
+INSERT INTO Historico(Temperatura,Pressao,Data,Horario, Setor_ID) 
+	VALUES (1304.11,5.1,22092021,200315,1);
+INSERT INTO Historico(Temperatura,Pressao,Data,Horario, Setor_ID) 
+	VALUES (1296.20,4.5,22092021,200315,2);
+INSERT INTO Historico(Temperatura,Pressao,Data,Horario, Setor_ID) 
+	VALUES (0,0,22092021,200315,3);
+INSERT INTO Historico(Temperatura,Pressao,Data,Horario, Setor_ID) 
+	VALUES (1307.12,5.2,22092021,200415,1);
+INSERT INTO Historico(Temperatura,Pressao,Data,Horario, Setor_ID) 
+	VALUES (1298.10,4.8,22092021,200415,2);
+INSERT INTO Historico(Temperatura,Pressao,Data,Horario, Setor_ID) 
+	VALUES (0,0,22092021,200415,3);
+INSERT INTO Historico(Temperatura,Pressao,Data,Horario, Setor_ID) 
+	VALUES (1299.06,4.8,22092021,200515,1);
+INSERT INTO Historico(Temperatura,Pressao,Data,Horario, Setor_ID) 
+	VALUES (1211.10,4.1,22092021,200515,2);
+INSERT INTO Historico(Temperatura,Pressao,Data,Horario, Setor_ID) 
+	VALUES (0,0,22092021,200515,3);
+
+/************************************** RELATORIOS ************************************/
+INSERT INTO Relatorios(Titulo,Descricao,Data,Horario,Link, Engenheiro_ID, Tecnico_ID) 
+	VALUES ('SETOR 1 OK','Funcionando perfeiamente',21092021,150115,'http://github.com/ignis/s1', 2, 3);
+INSERT INTO Relatorios(Titulo,Descricao,Data,Horario,Link, Engenheiro_ID, Tecnico_ID) 
+	VALUES ('SETOR 3 ERRO','Caldeira 3 com problema',21092021,160240,'http://github.com/ignis/s3', 1, 4);
+
